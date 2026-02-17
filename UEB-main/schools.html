@@ -18,22 +18,24 @@
     <!-- Navigation Bar (links to separate pages) -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="home.html"><i class="fas fa-graduation-cap me-2"></i>EduPortal</a>
+            <a class="navbar-brand" href="index.html"><i class="fas fa-graduation-cap me-2"></i>EduPortal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="schools.html">Schools</a></li>
                     <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
                     <li class="nav-item"><a class="nav-link" href="bursaries.html">Bursaries</a></li>
                     <li class="nav-item"><a class="nav-link" href="agents.html">Agents</a></li>
                     <li class="nav-item"><a class="nav-link" href="e-library.html">E-Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="suggestion.html">Suggestion</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link btn-login" href="#" data-bs-toggle="modal"
-                            data-bs-target="#loginModal"><i class="fas fa-lock me-1"></i>Admin</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-login" href="admin.html" data-bs-toggle="modal" data-bs-target="#adminModal">
+                            <i class="fas fa-lock me-1"></i>Admin
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -41,7 +43,7 @@
 
     <main class="container" style="padding-top:120px;">
         <h1 class="mb-3">Our Schools</h1>
-        <p>This is the dedicated Schools page. The full, rich content remains on <a href="home.html">Home</a>.</p>
+        <p>This is the dedicated Schools page. The full, rich content remains on <a href="index.html">Home</a>.</p>
     </main>
 
     <footer class="text-center py-4">
@@ -51,139 +53,136 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
-margin-bottom: 15px;
-}
+<style>
+    .badge-past-paper {
+        background: #ffebee;
+        color: #dc3545;
+    }
 
-.badge-past-paper {
-background: #ffebee;
-color: #dc3545;
-}
+    .badge-holiday {
+        background: #e8f5e9;
+        color: #28a745;
+    }
 
-.badge-holiday {
-background: #e8f5e9;
-color: #28a745;
-}
+    .badge-tahfidh {
+        background: #e0f2f1;
+        color: var(--islamic-green);
+    }
 
-.badge-tahfidh {
-background: #e0f2f1;
-color: var(--islamic-green);
-}
+    /* Suggestion Section */
+    .suggestion-form {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
 
-/* Suggestion Section */
-.suggestion-form {
-background: white;
-border-radius: 20px;
-padding: 35px;
-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
+    .suggestion-item {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--deep-blue);
+    }
 
-.suggestion-item {
-background: #f8f9fa;
-border-radius: 12px;
-padding: 20px;
-margin-bottom: 15px;
-border-left: 4px solid var(--deep-blue);
-}
+    /* Event Cards */
+    .event-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
 
-/* Event Cards */
-.event-card {
-background: #f8f9fa;
-border-radius: 10px;
-padding: 15px;
-margin-bottom: 15px;
-transition: all 0.3s ease;
-}
+    .event-card:hover {
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateX(5px);
+    }
 
-.event-card:hover {
-background: white;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-transform: translateX(5px);
-}
+    .event-date {
+        display: inline-block;
+        padding: 3px 10px;
+        background: var(--light-blue);
+        color: var(--deep-blue);
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
 
-.event-date {
-display: inline-block;
-padding: 3px 10px;
-background: var(--light-blue);
-color: var(--deep-blue);
-border-radius: 15px;
-font-size: 0.8rem;
-font-weight: 600;
-}
+    /* Footer */
+    .footer {
+        background: #0a1a2f;
+        color: white;
+        padding: 60px 0 30px;
+    }
 
-/* Footer */
-.footer {
-background: #0a1a2f;
-color: white;
-padding: 60px 0 30px;
-}
+    .footer a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
 
-.footer a {
-color: rgba(255, 255, 255, 0.8);
-text-decoration: none;
-transition: all 0.3s ease;
-}
+    .footer a:hover {
+        color: white;
+        padding-left: 5px;
+    }
 
-.footer a:hover {
-color: white;
-padding-left: 5px;
-}
+    .social-links a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+    }
 
-.social-links a {
-display: inline-block;
-width: 40px;
-height: 40px;
-background: rgba(255, 255, 255, 0.1);
-border-radius: 50%;
-text-align: center;
-line-height: 40px;
-margin-right: 10px;
-transition: all 0.3s ease;
-}
+    .social-links a:hover {
+        background: var(--deep-blue);
+        transform: translateY(-3px);
+    }
 
-.social-links a:hover {
-background: var(--deep-blue);
-transform: translateY(-3px);
-}
+    /* Back to Top */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--deep-blue);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
 
-/* Back to Top */
-.back-to-top {
-position: fixed;
-bottom: 30px;
-right: 30px;
-width: 50px;
-height: 50px;
-background: var(--deep-blue);
-color: white;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-opacity: 0;
-visibility: hidden;
-transition: all 0.3s ease;
-z-index: 999;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
-.back-to-top.show {
-opacity: 1;
-visibility: visible;
-}
+    .back-to-top:hover {
+        background: var(--islamic-green);
+        transform: translateY(-3px);
+    }
 
-.back-to-top:hover {
-background: var(--islamic-green);
-transform: translateY(-3px);
-}
+    .section-padding {
+        padding: 80px 0;
+    }
 
-.section-padding {
-padding: 80px 0;
-}
-
-.bg-light {
-background-color: #f8fafc !important;
-}
+    .bg-light {
+        background-color: #f8fafc !important;
+    }
 </style>
 </head>
 

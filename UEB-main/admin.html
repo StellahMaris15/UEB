@@ -2,43 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EduPortal — Suggestion Box</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - Single Page School Management System</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- External CSS (embedded for completeness) -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="home.html"><i class="fas fa-graduation-cap me-2"></i>EduPortal</a>
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>EduPortal
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="schools.html">Schools</a></li>
                     <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
                     <li class="nav-item"><a class="nav-link" href="bursaries.html">Bursaries</a></li>
                     <li class="nav-item"><a class="nav-link" href="agents.html">Agents</a></li>
                     <li class="nav-item"><a class="nav-link" href="e-library.html">E-Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="suggestion.html">Suggestion</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-login" href="admin.html" data-bs-toggle="modal" data-bs-target="#adminModal">
+                            <i class="fas fa-lock me-1"></i>Admin
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <main class="container" style="padding-top:120px;">
-        <h1 class="mb-3">Suggestion Box</h1>
-        <p>Dedicated Suggestion page. See <a href="home.html">Home</a> for the original layout.</p>
-    </main>
-
-    <footer class="text-center py-4"><small>&copy; 2024 EduPortal</small></footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
