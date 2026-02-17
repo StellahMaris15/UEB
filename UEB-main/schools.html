@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduPortal — Schools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" style="display:none;"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Navigation Bar (links to separate pages) -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="home.html"><i class="fas fa-graduation-cap me-2"></i>EduPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schools.html">Schools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bursaries.html">Bursaries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agents.html">Agents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="e-library.html">E-Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="suggestion.html">Suggestion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn-login" href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal"><i class="fas fa-lock me-1"></i>Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top:120px;">
+        <h1 class="mb-3">Our Schools</h1>
+        <p>This is the dedicated Schools page. The full, rich content remains on <a href="home.html">Home</a>.</p>
+    </main>
+
+    <footer class="text-center py-4">
+        <small>&copy; 2024 EduPortal</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+margin-bottom: 15px;
+}
+
+.badge-past-paper {
+background: #ffebee;
+color: #dc3545;
+}
+
+.badge-holiday {
+background: #e8f5e9;
+color: #28a745;
+}
+
+.badge-tahfidh {
+background: #e0f2f1;
+color: var(--islamic-green);
+}
+
+/* Suggestion Section */
+.suggestion-form {
+background: white;
+border-radius: 20px;
+padding: 35px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+background: #f8f9fa;
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 15px;
+border-left: 4px solid var(--deep-blue);
+}
+
+/* Event Cards */
+.event-card {
+background: #f8f9fa;
+border-radius: 10px;
+padding: 15px;
+margin-bottom: 15px;
+transition: all 0.3s ease;
+}
+
+.event-card:hover {
+background: white;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+transform: translateX(5px);
+}
+
+.event-date {
+display: inline-block;
+padding: 3px 10px;
+background: var(--light-blue);
+color: var(--deep-blue);
+border-radius: 15px;
+font-size: 0.8rem;
+font-weight: 600;
+}
+
+/* Footer */
+.footer {
+background: #0a1a2f;
+color: white;
+padding: 60px 0 30px;
+}
+
+.footer a {
+color: rgba(255, 255, 255, 0.8);
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.footer a:hover {
+color: white;
+padding-left: 5px;
+}
+
+.social-links a {
+display: inline-block;
+width: 40px;
+height: 40px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 50%;
+text-align: center;
+line-height: 40px;
+margin-right: 10px;
+transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+background: var(--deep-blue);
+transform: translateY(-3px);
+}
+
+/* Back to Top */
+.back-to-top {
+position: fixed;
+bottom: 30px;
+right: 30px;
+width: 50px;
+height: 50px;
+background: var(--deep-blue);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+z-index: 999;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.show {
+opacity: 1;
+visibility: visible;
+}
+
+.back-to-top:hover {
+background: var(--islamic-green);
+transform: translateY(-3px);
+}
+
+.section-padding {
+padding: 80px 0;
+}
+
+.bg-light {
+background-color: #f8fafc !important;
+}
+</style>
+</head>
+
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <i class="fas fa-graduation-cap me-2"></i>EduPortal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schools.html">Schools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bursaries.html">Bursaries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agents.html">Agents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="e-library.html">E-Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="suggestion.html">Suggestion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-lock me-1"></i>Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-lock me-2"></i>Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn-deep-blue w-100">Login to Dashboard</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schools Section (with Tahfidh added) -->
+    <section id="schools" class="section-padding">
+        <div class="container">
+            <h2 class="section-header" data-aos="fade-up">Our Schools</h2>
+
+            <!-- Categories (Tahfidh added) -->
+            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('kindergarten')">
+                        <i class="fas fa-baby"></i>
+                        <h6>Kindergarten</h6>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('nursery')">
+                        <i class="fas fa-child"></i>
+                        <h6>Nursery</h6>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('primary')">
+                        <i class="fas fa-user-graduate"></i>
+                        <h6>Primary</h6>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('secondary')">
+                        <i class="fas fa-users"></i>
+                        <h6>Secondary</h6>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('technical')">
+                        <i class="fas fa-laptop-code"></i>
+                        <h6>Technical</h6>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="category-card" onclick="filterSchools('university')">
+                        <i class="fas fa-university"></i>
+                        <h6>University</h6>
+                    </div>
+                </div>
+                <!-- Tahfidh Category (new) -->
+                <div class="col-md-2 col-6">
+                    <div class="category-card islamic" onclick="filterSchools('tahfidh')">
+                        <i class="fas fa-mosque"></i>
+                        <h6>Tahfidh</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Islamic Curriculum Section -->
+            <div class="row mb-5" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-12">
+                    <div class="islamic-pattern p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h3 class="text-white mb-3"><i class="fas fa-mosque me-2"></i>Tahfidh & Islamic
+                                    Curriculum</h3>
+                                <p class="text-white mb-0">Specialized Islamic education with Quran memorization, Arabic
+                                    studies, and integrated Islamic sciences</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <button class="btn-islamic" onclick="viewIslamicSchools()">View Islamic Schools</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School Profiles (Tahfidh school included) -->
+            <div class="row" id="schoolProfiles">
+                <div class="col-lg-6 mb-4" data-aos="fade-right">
+                    <div class="card-custom">
+                        <img src="https://via.placeholder.com/600x300/1a237e/ffffff?text=Springfield+School"
+                            class="card-img-top" alt="School">
+                        <div class="card-body">
+                            <h4>Springfield International School</h4>
+                            <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Nairobi, Kenya</p>
+                            <p>A premier institution offering holistic education from kindergarten to university level.
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-book-open me-2"></i>Programs:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Cambridge Curriculum</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>IB Diploma</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>STEM Programs</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-phone me-2"></i>Contact:</h6>
+                                    <p class="mb-1">+254 700 123 456</p>
+                                    <p>info@springfield.edu</p>
+                                </div>
+                            </div>
+
+                            <button class="btn-deep-blue mt-3" onclick="viewSchoolDetails('springfield')">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4" data-aos="fade-left">
+                    <div class="card-custom">
+                        <img src="https://via.placeholder.com/600x300/534bae/ffffff?text=Nairobi+Tech"
+                            class="card-img-top" alt="School">
+                        <div class="card-body">
+                            <h4>Nairobi Technical Institute</h4>
+                            <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Mombasa Road, Nairobi</p>
+                            <p>Leading technical institution specializing in engineering, IT, and vocational training.
+                            </p>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-book-open me-2"></i>Programs:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Computer Science</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Electrical Engineering</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Mechanical Engineering</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6><i class="fas fa-phone me-2"></i>Contact:</h6>
+                                    <p class="mb-1">+254 711 789 012</p>
+                                    <p>info@nairobitech.ac.ke</p>
+                                </div>
+                            </div>
+
+                            <button class="btn-deep-blue mt-3" onclick="viewSchoolDetails('nairobi-tech')">View
+                                Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Islamic School Profile (Tahfidh) -->
+                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card-custom islamic-border">
+                        <img src="https://via.placeholder.com/600x300/2e7d32/ffffff?text=Al-Noor+Islamic+Academy"
+                            class="card-img-top" alt="Islamic School">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2"><i class="fas fa-mosque me-1"></i>Tahfidh School</span>
+                            <h4>Al-Noor Islamic Academy</h4>
+                            <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Mombasa, Kenya</p>
