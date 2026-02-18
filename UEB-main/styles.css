@@ -515,3 +515,103 @@
         .bg-light {
             background-color: #f8fafc !important;
         }
+
+        /*Admin pannel*/
+        /* Admin Dashboard Styles */
+.admin-dashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f6f9;
+    z-index: 9999;
+    overflow-y: auto;
+    margin-top: 60px;
+}
+
+.admin-sidebar {
+    background: #343a40;
+    color: white;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.admin-sidebar .nav-link {
+    color: rgba(255,255,255,.8);
+    padding: 12px 20px;
+    transition: all 0.3s;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+    background: #007bff;
+    color: white;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-content {
+    background: white;
+    min-height: 100vh;
+}
+
+.admin-items-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.admin-item-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-item-actions button {
+    margin-left: 5px;
+}
+
+/* Add to existing styles */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+/* Admin login button styling */
+.btn-login {
+    background: #28a745;
+    color: white !important;
+    border-radius: 5px;
+    padding: 8px 15px !important;
+    margin-left: 10px;
+}
+
+.btn-login:hover {
+    background: #218838;
+}

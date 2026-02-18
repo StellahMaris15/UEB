@@ -40,7 +40,8 @@
                     <li class="nav-item"><a class="nav-link" href="e-library.html">E-Library</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
-                        <a class="nav-link btn-login" href="admin.html" data-bs-toggle="modal" data-bs-target="#adminModal">
+                        <a class="nav-link btn-login" href="admin.html" data-bs-toggle="modal"
+                            data-bs-target="#adminModal">
                             <i class="fas fa-lock me-1"></i>Admin
                         </a>
                     </li>
@@ -48,3 +49,384 @@
             </div>
         </div>
     </nav>
+
+    <!-- Admin Login Modal -->
+    <div class="modal fade" id="adminModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminLoginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Panel (hidden by default) -->
+    <div id="adminPanel" style="display: none;">
+        <div class="admin-dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidebar -->
+                    <div class="col-md-3 col-lg-2 px-0">
+                        <div class="admin-sidebar">
+                            <div class="admin-profile p-3">
+                                <h5><i class="fas fa-user-shield me-2"></i>Admin Panel</h5>
+                                <p class="text-muted">Welcome, Admin</p>
+                            </div>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#schoolsManagement" data-admin-section="schools">
+                                        <i class="fas fa-school me-2"></i>Manage Schools
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#activitiesManagement" data-admin-section="activities">
+                                        <i class="fas fa-running me-2"></i>Manage Activities
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#bursariesManagement" data-admin-section="bursaries">
+                                        <i class="fas fa-coins me-2"></i>Manage Bursaries
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#agentsManagement" data-admin-section="agents">
+                                        <i class="fas fa-user-tie me-2"></i>Manage Agents
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#libraryManagement" data-admin-section="library">
+                                        <i class="fas fa-book me-2"></i>Manage E-Library
+                                    </a>
+                                </li>
+                                <li class="nav-item mt-4">
+                                    <a class="nav-link text-danger" href="#" id="logoutAdmin">
+                                        <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="col-md-9 col-lg-10">
+                        <div class="admin-content p-4">
+                            <!-- Schools Management Form -->
+                            <div id="schoolsManagement" class="admin-section active">
+                                <h4 class="mb-4">Add/Edit School Information</h4>
+                                <form id="schoolForm" class="mb-5">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">School Name</label>
+                                            <input type="text" class="form-control" id="schoolName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Location</label>
+                                            <input type="text" class="form-control" id="schoolLocation" required>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Type</label>
+                                            <select class="form-control" id="schoolType">
+                                                <option>Public</option>
+                                                <option>Private</option>
+                                                <option>International</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Students</label>
+                                            <input type="number" class="form-control" id="schoolStudents">
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label class="form-label">Rating</label>
+                                            <input type="number" step="0.1" class="form-control" id="schoolRating"
+                                                min="0" max="5">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label">Description</label>
+                                            <textarea class="form-control" id="schoolDescription" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Add School</button>
+                                            <button type="button" class="btn btn-secondary" id="updateSchoolBtn"
+                                                style="display: none;">Update School</button>
+                                            <button type="button" class="btn btn-danger" id="cancelEdit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <!-- Schools List -->
+                                <h5>Existing Schools</h5>
+                                <div id="schoolsList" class="admin-items-list"></div>
+                            </div>
+
+                            <!-- Activities Management Form (similar structure) -->
+                            <div id="activitiesManagement" class="admin-section">
+                                <!-- Add activities form here -->
+                            </div>
+
+                            <!-- Bursaries Management Form -->
+                            <div id="bursariesManagement" class="admin-section">
+                                <!-- Add bursaries form here -->
+                            </div>
+
+                            <!-- Agents Management Form -->
+                            <div id="agentsManagement" class="admin-section">
+                                <!-- Add agents form here -->
+                            </div>
+
+                            <!-- E-Library Management Form -->
+                            <div id="libraryManagement" class="admin-section">
+                                <!-- Add library items form here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery for easier DOM manipulation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Admin authentication and management
+        $(document).ready(function () {
+
+            // Admin credentials (in real application, use server-side authentication)
+            const ADMIN_USERNAME = "admin";
+            const ADMIN_PASSWORD = "admin123";
+
+            // Check if admin is logged in
+            let isAdminLoggedIn = sessionStorage.getItem('adminLoggedIn') === 'true';
+
+            // Toggle admin panel visibility
+            if (isAdminLoggedIn) {
+                $('#adminPanel').show();
+                $('.navbar-custom').hide();
+                $('body').css('padding-top', '0');
+            }
+
+            // Handle admin login
+            $('#adminLoginForm').submit(function (e) {
+                e.preventDefault();
+
+                const username = $('#username').val();
+                const password = $('#password').val();
+
+                if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                    sessionStorage.setItem('adminLoggedIn', 'true');
+                    $('#adminModal').modal('hide');
+                    $('#adminPanel').show();
+                    $('.navbar-custom').hide();
+                    $('body').css('padding-top', '0');
+
+                    // Load existing data
+                    loadSchools();
+                } else {
+                    alert('Invalid credentials!');
+                }
+            });
+
+            // Logout
+            $('#logoutAdmin').click(function (e) {
+                e.preventDefault();
+                sessionStorage.removeItem('adminLoggedIn');
+                $('#adminPanel').hide();
+                $('.navbar-custom').show();
+                $('body').css('padding-top', '60px');
+                window.location.href = 'index.html';
+            });
+
+            // Admin section navigation
+            $('[data-admin-section]').click(function (e) {
+                e.preventDefault();
+                const section = $(this).data('admin-section');
+
+                // Update active states
+                $('.admin-sidebar .nav-link').removeClass('active');
+                $(this).addClass('active');
+
+                // Show corresponding section
+                $('.admin-section').removeClass('active');
+                $(`#${section}Management`).addClass('active');
+            });
+
+            // Load schools from localStorage
+            function loadSchools() {
+                const schools = JSON.parse(localStorage.getItem('schools')) || [];
+                let html = '';
+
+                schools.forEach((school, index) => {
+                    html += `
+                <div class="admin-item-card">
+                    <div>
+                        <h6>${school.name}</h6>
+                        <small>${school.location} - ${school.type}</small>
+                    </div>
+                    <div class="admin-item-actions">
+                        <button class="btn btn-sm btn-warning" onclick="editSchool(${index})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteSchool(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+                });
+
+                $('#schoolsList').html(html);
+            }
+
+            // Save school to localStorage
+            $('#schoolForm').submit(function (e) {
+                e.preventDefault();
+
+                const schoolData = {
+                    name: $('#schoolName').val(),
+                    location: $('#schoolLocation').val(),
+                    type: $('#schoolType').val(),
+                    students: $('#schoolStudents').val(),
+                    rating: $('#schoolRating').val(),
+                    description: $('#schoolDescription').val()
+                };
+
+                const schools = JSON.parse(localStorage.getItem('schools')) || [];
+                schools.push(schoolData);
+                localStorage.setItem('schools', JSON.stringify(schools));
+
+                // Reset form
+                $('#schoolForm')[0].reset();
+
+                // Reload schools list
+                loadSchools();
+
+                alert('School added successfully!');
+            });
+
+            // Edit school function
+            window.editSchool = function (index) {
+                const schools = JSON.parse(localStorage.getItem('schools')) || [];
+                const school = schools[index];
+
+                $('#schoolName').val(school.name);
+                $('#schoolLocation').val(school.location);
+                $('#schoolType').val(school.type);
+                $('#schoolStudents').val(school.students);
+                $('#schoolRating').val(school.rating);
+                $('#schoolDescription').val(school.description);
+
+                // Show update button and hide add button
+                $('#updateSchoolBtn').show().data('index', index);
+                $('#schoolForm button[type="submit"]').hide();
+            };
+
+            // Update school
+            $('#updateSchoolBtn').click(function () {
+                const index = $(this).data('index');
+                const schools = JSON.parse(localStorage.getItem('schools')) || [];
+
+                schools[index] = {
+                    name: $('#schoolName').val(),
+                    location: $('#schoolLocation').val(),
+                    type: $('#schoolType').val(),
+                    students: $('#schoolStudents').val(),
+                    rating: $('#schoolRating').val(),
+                    description: $('#schoolDescription').val()
+                };
+
+                localStorage.setItem('schools', JSON.stringify(schools));
+
+                // Reset form and buttons
+                $('#schoolForm')[0].reset();
+                $('#updateSchoolBtn').hide();
+                $('#schoolForm button[type="submit"]').show();
+
+                // Reload schools list
+                loadSchools();
+
+                alert('School updated successfully!');
+            });
+
+            // Cancel edit
+            $('#cancelEdit').click(function () {
+                $('#schoolForm')[0].reset();
+                $('#updateSchoolBtn').hide();
+                $('#schoolForm button[type="submit"]').show();
+            });
+
+            // Delete school function
+            window.deleteSchool = function (index) {
+                if (confirm('Are you sure you want to delete this school?')) {
+                    const schools = JSON.parse(localStorage.getItem('schools')) || [];
+                    schools.splice(index, 1);
+                    localStorage.setItem('schools', JSON.stringify(schools));
+                    loadSchools();
+                }
+            };
+
+            // Load schools if admin is logged in
+            if (isAdminLoggedIn) {
+                loadSchools();
+            }
+
+            // Back to top button functionality
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#backToTop').addClass('show');
+                } else {
+                    $('#backToTop').removeClass('show');
+                }
+            });
+
+            $('#backToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+            });
+        });
+
+        // On your main pages (schools.html, index.html, etc.)
+        function displaySchools() {
+            const schools = JSON.parse(localStorage.getItem('schools')) || [];
+
+            // Example: Display schools on schools.html
+            let schoolsHTML = '';
+            schools.forEach(school => {
+                schoolsHTML += `
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="card school-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${school.name}</h5>
+                        <p class="card-text">
+                            <i class="fas fa-map-marker-alt"></i> ${school.location}<br>
+                            <i class="fas fa-users"></i> ${school.students} students<br>
+                            <i class="fas fa-star text-warning"></i> ${school.rating}
+                        </p>
+                        <p class="card-text">${school.description}</p>
+                        <span class="badge bg-primary">${school.type}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+            });
+
+            $('.schools-container').html(schoolsHTML);
+        }
+    </script>
+
+</body>
+
+</html>
